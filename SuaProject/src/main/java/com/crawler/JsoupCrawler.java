@@ -38,6 +38,7 @@ public class JsoupCrawler {
                     sb.append("링크: <a href='").append(link).append("' target='_blank'>기사 보기</a><br><br>");
                 }
             }
+         
 
         } catch (Exception e) {
             sb.append("오류 발생: ").append(e.getMessage());
@@ -50,3 +51,10 @@ public class JsoupCrawler {
         return new JsoupCrawler().crawlNaverNews();
     }
 }
+
+
+//news build test 
+
+
+
+
