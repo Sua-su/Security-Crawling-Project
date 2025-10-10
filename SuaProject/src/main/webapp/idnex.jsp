@@ -1,4 +1,5 @@
 <%@ page import="com.crawler.JsoupCrawler" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,13 @@
     <title>Jsoup Crawling Test</title>
 </head>
 <body>
-    <h1>Jsoup Crawling 결과</h1>
+    <h1>Jsoup Crawling test</h1>
     <div>
-        <%= JsoupCrawler.StackTrace() %>
+        <%
+        JsoupCrawler crawler = new JsoupCrawler();
+        String result = crawler.crawlNaverNews();   
+        out.print(crawler.crawlNaverNews());
+        %>
     </div>
 </body>
 </html>
