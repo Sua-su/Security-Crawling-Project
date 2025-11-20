@@ -1,0 +1,378 @@
+/* ===== 게시판 스타일 - Modern Monochrome Board Theme ===== */
+
+/* Board Container */
+.board-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Board Header */
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.board-header h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    justify-content: flex-end;
+}
+
+.search-form select {
+    padding: 12px 16px;
+    border: 2px solid #DADADA;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+}
+
+.search-form input {
+    padding: 12px 20px;
+    border: 2px solid #DADADA;
+    border-radius: 12px;
+    font-size: 14px;
+    flex: 0 1 320px;
+    font-weight: 500;
+}
+
+.search-form button {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Board Table */
+.board-table {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.board-table thead {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+}
+
+.board-table thead th {
+    padding: 18px 20px;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.board-table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.board-table tbody tr:hover {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0%, transparent 100%);
+    transform: scale(1.01);
+}
+
+.board-table tbody td {
+    padding: 18px 20px;
+    text-align: center;
+    color: #6B6B6B;
+    font-weight: 500;
+}
+
+.board-table tbody td a {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.board-table tbody td a:hover {
+    color: #2B2B2B;
+    text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #6B6B6B;
+    background: white;
+    border: 2px solid #DADADA;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    min-width: 44px;
+    text-align: center;
+}
+
+.pagination a:hover {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pagination .active {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Post Detail */
+.post-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(130, 130, 130, 0.05) 100%);
+    padding: 32px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 2.2rem;
+    color: #111111;
+    margin-bottom: 20px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.post-meta {
+    display: flex;
+    gap: 24px;
+    color: #6B6B6B;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-content {
+    padding: 40px;
+    min-height: 400px;
+    line-height: 2;
+    color: #3B3B3B;
+    font-size: 16px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding: 24px 40px;
+    background: #F9FAFB;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Comments Section */
+.comments-section {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 28px;
+}
+
+.comments-header {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.comment-item {
+    padding: 24px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.comment-item:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateX(4px);
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-author {
+    font-weight: 800;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.comment-date {
+    color: #9C9C9C;
+    font-size: 13px;
+    margin-left: 12px;
+    font-weight: 600;
+}
+
+.comment-text {
+    color: #6B6B6B;
+    line-height: 1.8;
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+/* Comment Form */
+.comment-form {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 18px 24px;
+    border: 2px solid #DADADA;
+    border-radius: 14px;
+    font-size: 15px;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.8;
+}
+
+.comment-form textarea:focus {
+    border-color: #2B2B2B;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Write Form */
+.write-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.write-form .form-group input[type="text"] {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.write-form textarea {
+    min-height: 500px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Category Badge */
+.category-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .board-container {
+        padding: 24px;
+    }
+    
+    .post-title {
+        font-size: 1.75rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input {
+        flex: 1;
+    }
+    
+    .board-table {
+        font-size: 14px;
+    }
+    
+    .board-table th,
+    .board-table td {
+        padding: 12px 10px;
+    }
+    
+    .pagination a,
+    .pagination span {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
