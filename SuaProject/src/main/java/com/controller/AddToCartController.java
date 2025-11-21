@@ -54,8 +54,8 @@ public class AddToCartController extends HttpServlet {
 
             // 재고 확인
             if (product.getStock() < quantity) {
-                String redirectUrl = returnUrl != null ? returnUrl : "/products";
-                response.sendRedirect(request.getContextPath() + redirectUrl +
+                String redirectUrl = returnUrl != null ? returnUrl : request.getContextPath() + "/products";
+                response.sendRedirect(redirectUrl +
                         (redirectUrl.contains("?") ? "&" : "?") + "error=" +
                         URLEncoder.encode("재고가 부족합니다.", "UTF-8"));
                 return;
@@ -72,8 +72,8 @@ public class AddToCartController extends HttpServlet {
                     ", quantity: " + quantity + ", success: " + success);
 
             if (success) {
-                String redirectUrl = returnUrl != null ? returnUrl : "/cart";
-                response.sendRedirect(request.getContextPath() + redirectUrl +
+                String redirectUrl = returnUrl != null ? returnUrl : request.getContextPath() + "/cart";
+                response.sendRedirect(redirectUrl +
                         (redirectUrl.contains("?") ? "&" : "?") + "success=" +
                         URLEncoder.encode("장바구니에 추가되었습니다.", "UTF-8"));
             } else {

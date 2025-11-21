@@ -64,9 +64,9 @@ public class BoardService {
         }
     }
 
-    public boolean deletePost(int postId, int userId) {
+    public boolean deletePost(int postId, int userId, boolean isAdmin) {
         try {
-            return boardDAO.deletePost(postId, userId);
+            return boardDAO.deletePost(postId, userId, isAdmin);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

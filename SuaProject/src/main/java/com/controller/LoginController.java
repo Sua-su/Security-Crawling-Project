@@ -71,7 +71,12 @@ public class LoginController extends HttpServlet {
                 session.setMaxInactiveInterval(60 * 30); // 30분
             }
 
-            response.sendRedirect(request.getContextPath() + "/index");
+            // 어드민 계정이면 어드민 대시보드로, 일반 사용자는 메인 페이지로
+            if (user.isAdmin()) {
+                response.sendRedirect(request.getContextPath() + "/admin/dashboard");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/index");
+            }
         } else {
             // 로그인 실패
             String error = URLEncoder.encode("아이디 또는 비밀번호가 올바르지 않습니다.", "UTF-8");

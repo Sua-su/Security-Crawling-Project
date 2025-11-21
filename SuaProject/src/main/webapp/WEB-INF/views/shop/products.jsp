@@ -23,7 +23,7 @@
     <div class="nav-links">
         <a href="<%= contextPath %>/index"> 홈</a>
         <a href="<%= contextPath %>/products"> 상품 게시판</a>
-        <a href="<%= contextPath %>/board/list">💬 게시판</a>
+        <a href="<%= contextPath %>/board/list">게시판</a>
         <a href="<%= contextPath %>/cart"> 장바구니</a>
         <a href="<%= contextPath %>/mypage"> 마이페이지</a>
     </div>
@@ -50,7 +50,7 @@
     
     <% if (products == null || products.isEmpty()) { %>
     <div class="empty">
-        <p style="font-size: 3em;">📭</p>
+        <p style="font-size: 3em;">비어있음</p>
         <p>등록된 상품이 없습니다.</p>
     </div>
     <% } else { %>

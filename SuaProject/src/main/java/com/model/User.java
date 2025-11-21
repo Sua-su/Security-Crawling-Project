@@ -160,6 +160,15 @@ public class User {
         return "ACTIVE".equals(this.status);
     }
 
+    // EL 표현식 호환용 getter
+    public boolean getActive() {
+        return isActive();
+    }
+
+    public boolean getAdmin() {
+        return isAdmin();
+    }
+
     @Override
     public String toString() {
         return "User{" +

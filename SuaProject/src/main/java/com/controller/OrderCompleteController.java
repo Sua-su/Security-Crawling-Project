@@ -45,7 +45,7 @@ public class OrderCompleteController extends HttpServlet {
 
             request.setAttribute("order", order);
             request.setAttribute("orderItems", orderItems);
-            request.getRequestDispatcher("/WEB-INF/views/orderComplete.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/order/orderComplete.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
             response.sendRedirect(request.getContextPath() + "/products");

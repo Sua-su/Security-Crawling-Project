@@ -1,6 +1,8 @@
 package com.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 게시판 DTO
@@ -20,6 +22,7 @@ public class Board {
     private String name; // 작성자 실명
     private int commentCount;
     private int views; // viewCount alias
+    private List<BoardAttachment> attachments = new ArrayList<>(); // 첨부파일 목록
 
     // 기본 생성자
     public Board() {
@@ -128,5 +131,13 @@ public class Board {
 
     public void setCommentCount(int commentCount) {
         this.commentCount = commentCount;
+    }
+
+    public List<BoardAttachment> getAttachments() {
+        return attachments;
+    }
+
+    public void setAttachments(List<BoardAttachment> attachments) {
+        this.attachments = attachments;
     }
 }

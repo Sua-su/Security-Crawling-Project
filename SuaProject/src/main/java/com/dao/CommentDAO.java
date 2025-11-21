@@ -95,7 +95,6 @@ public class CommentDAO {
                 comment.setUserId(rs.getInt("user_id"));
                 comment.setContent(rs.getString("content"));
                 comment.setCreatedAt(rs.getTimestamp("created_at"));
-                comment.setUpdatedAt(rs.getTimestamp("updated_at"));
                 comment.setUsername(rs.getString("username"));
                 comment.setName(rs.getString("name"));
                 comments.add(comment);

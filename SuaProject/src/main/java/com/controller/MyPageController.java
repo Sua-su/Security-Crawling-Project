@@ -43,6 +43,6 @@ public class MyPageController extends HttpServlet {
         }
 
         request.setAttribute("myPageData", myPageData);
-        request.getRequestDispatcher("/WEB-INF/views/mypage.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/user/mypage.jsp").forward(request, response);
     }
 }

@@ -1,8 +1,10 @@
 package com.controller;
 
 import com.dao.BoardDAO;
+import com.dao.BoardAttachmentDAO;
 import com.dao.CommentDAO;
 import com.model.Board;
+import com.model.BoardAttachment;
 import com.model.Comment;
 
 import javax.servlet.ServletException;
@@ -19,12 +21,14 @@ public class BoardViewController extends HttpServlet {
 
     private BoardDAO boardDAO;
     private CommentDAO commentDAO;
+    private BoardAttachmentDAO attachmentDAO;
 
     @Override
     public void init() throws ServletException {
         super.init();
         this.boardDAO = new BoardDAO();
         this.commentDAO = new CommentDAO();
+        this.attachmentDAO = new BoardAttachmentDAO();
     }
 
     @Override
@@ -58,6 +62,10 @@ public class BoardViewController extends HttpServlet {
 
             // 댓글 조회
             List<Comment> comments = commentDAO.getCommentsByBoardId(boardId);
+
+            // 첨부파일 조회
+            List<BoardAttachment> attachments = attachmentDAO.getAttachmentsByBoardId(boardId);
+            board.setAttachments(attachments);
 
             request.setAttribute("board", board);
             request.setAttribute("comments", comments);

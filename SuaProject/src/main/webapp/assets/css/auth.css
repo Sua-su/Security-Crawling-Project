@@ -7,7 +7,8 @@ body {
     justify-content: center;
     padding: 20px;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* subtle dotted pattern */
@@ -125,7 +126,7 @@ body::after {
     padding: 16px 20px;
     background: #f1f1f1;
     border: 2px solid #e5e5e5;
-    border-radius: 12px;
+    border-radius: 14px;
     transition: all 0.3s ease;
     font-size: 15px;
     color: #000000;
@@ -164,7 +165,7 @@ body::after {
     background: #000000;
     color: #ffffff;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: 700;
     font-size: 13px;
     cursor: pointer;
@@ -194,7 +195,7 @@ body::after {
 /* Messages */
 .message {
     padding: 12px 16px;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-top: 8px;
     font-size: 13px;
     font-weight: 600;
@@ -219,7 +220,7 @@ body::after {
     width: 100%;
     padding: 16px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 14px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;

@@ -41,7 +41,7 @@ public class CartController extends HttpServlet {
                 "개, totalPrice: " + cartData.getTotalPrice());
 
         request.setAttribute("cartData", cartData);
-        request.getRequestDispatcher("/WEB-INF/views/cart.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/order/cart.jsp").forward(request, response);
     }
 
     @Override

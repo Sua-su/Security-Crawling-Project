@@ -14,6 +14,13 @@ public class Order {
     private String paymentMethod;
     private Timestamp createdAt;
 
+    // 배송 정보
+    private String shippingAddress;
+    private String shippingAddressDetail;
+    private String shippingZipcode;
+    private String recipientName;
+    private String recipientPhone;
+
     // 추가 정보
     private String username;
     private String userName;
@@ -100,5 +107,45 @@ public class Order {
 
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getShippingAddressDetail() {
+        return shippingAddressDetail;
+    }
+
+    public void setShippingAddressDetail(String shippingAddressDetail) {
+        this.shippingAddressDetail = shippingAddressDetail;
+    }
+
+    public String getShippingZipcode() {
+        return shippingZipcode;
+    }
+
+    public void setShippingZipcode(String shippingZipcode) {
+        this.shippingZipcode = shippingZipcode;
+    }
+
+    public String getRecipientName() {
+        return recipientName;
+    }
+
+    public void setRecipientName(String recipientName) {
+        this.recipientName = recipientName;
+    }
+
+    public String getRecipientPhone() {
+        return recipientPhone;
+    }
+
+    public void setRecipientPhone(String recipientPhone) {
+        this.recipientPhone = recipientPhone;
     }
 }

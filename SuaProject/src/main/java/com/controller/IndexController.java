@@ -45,6 +45,6 @@ public class IndexController extends HttpServlet {
         request.setAttribute("dashboardData", dashboardData);
 
         // JSP로 포워딩
-        request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/main/mainPage.jsp").forward(request, response);
     }
 }

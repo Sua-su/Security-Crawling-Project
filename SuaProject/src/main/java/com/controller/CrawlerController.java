@@ -20,7 +20,7 @@ public class CrawlerController extends HttpServlet {
 
         // 키워드가 없으면 선택 화면 표시
         if (keyword == null || keyword.isEmpty()) {
-            request.getRequestDispatcher("/WEB-INF/views/crawler.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/crawler/crawler.jsp").forward(request, response);
             return;
         }
 
@@ -30,12 +30,12 @@ public class CrawlerController extends HttpServlet {
 
             request.setAttribute("crawlerResult", result);
             request.setAttribute("selectedKeyword", keyword);
-            request.getRequestDispatcher("/WEB-INF/views/crawler.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/crawler/crawler.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/views/crawler.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/crawler/crawler.jsp").forward(request, response);
         }
     }
 }

@@ -279,4 +279,45 @@ public class UserDAO {
 
         return users;
     }
+
+    /**
+     * 회원 검색 (이름, 아이디, 이메일)
+     */
+    public List<User> searchUsers(String keyword) {
+        List<User> users = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE username LIKE ? OR name LIKE ? OR email LIKE ? ORDER BY created_at DESC";
+        String searchPattern = "%" + keyword + "%";
+
+        try (Connection conn = DBConnect.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, searchPattern);
+            pstmt.setString(2, searchPattern);
+            pstmt.setString(3, searchPattern);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                User user = new User();
+                user.setUserId(rs.getInt("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setPhone(rs.getString("phone"));
+                user.setAddress(rs.getString("address"));
+                user.setAddressDetail(rs.getString("address_detail"));
+                user.setZipcode(rs.getString("zipcode"));
+                user.setRole(rs.getString("role"));
+                user.setStatus(rs.getString("status"));
+                user.setCreatedAt(rs.getTimestamp("created_at"));
+                user.setLastLogin(rs.getTimestamp("last_login"));
+                users.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
 }

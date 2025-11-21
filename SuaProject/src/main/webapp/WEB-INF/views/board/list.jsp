@@ -33,11 +33,11 @@
     </div>
     
     <div class="header">
-        <h1>💬 게시판</h1>
+        <h1>게시판</h1>
         <a href="<%= contextPath %>/board/write" class="btn btn-primary"> 글쓰기</a>
     </div>
     
-    <form action="<%= contextPath %>/board/list" method="get" class="search-box">
+    <form action="<%= contextPath %>/board/list" method="get" class="search-form">
         <input type="text" name="keyword" placeholder="제목 또는 내용 검색" 
                value="<%= isSearch ? keyword : "" %>">
         <button type="submit"> 검색</button>
@@ -54,7 +54,7 @@
     
     <% if (posts == null || posts.isEmpty()) { %>
     <div class="empty">
-        <p style="font-size: 3em;">📭</p>
+        <p style="font-size: 3em;">비어있음</p>
         <p><%= isSearch ? "검색 결과가 없습니다." : "첫 번째 글을 작성해보세요!" %></p>
     </div>
     <% } else { %>

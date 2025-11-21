@@ -96,12 +96,12 @@ public class CartDAO {
     public List<Cart> getCartByUserId(int userId) {
         List<Cart> cartList = new ArrayList<>();
 
-        String sql = "SELECT c.cart_id, c.user_id, c.product_id, c.quantity, c.added_at, " +
+        String sql = "SELECT c.cart_id, c.user_id, c.product_id, c.quantity, c.created_at, " +
                 "p.product_name, p.description, p.price, p.stock, p.category, p.file_path " +
                 "FROM cart c " +
                 "JOIN products p ON c.product_id = p.product_id " +
                 "WHERE c.user_id = ? " +
-                "ORDER BY c.added_at DESC";
+                "ORDER BY c.created_at DESC";
 
         System.out.println("🔍 장바구니 조회 쿼리 실행 - userId: " + userId);
 
@@ -119,7 +119,7 @@ public class CartDAO {
                 cart.setUserId(rs.getInt("user_id"));
                 cart.setProductId(rs.getInt("product_id"));
                 cart.setQuantity(rs.getInt("quantity"));
-                cart.setAddedAt(rs.getTimestamp("added_at"));
+                cart.setAddedAt(rs.getTimestamp("created_at"));
 
                 // 상품 정보
                 cart.setProductName(rs.getString("product_name"));

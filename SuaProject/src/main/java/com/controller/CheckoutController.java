@@ -41,7 +41,7 @@ public class CheckoutController extends HttpServlet {
         }
 
         request.setAttribute("checkoutData", checkoutData);
-        request.getRequestDispatcher("/WEB-INF/views/checkout.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/order/checkout.jsp").forward(request, response);
     }
 
     @Override

@@ -17,6 +17,7 @@ public class Product {
     private int stock; // 재고
     private String category; // 카테고리
     private String status; // ACTIVE, INACTIVE
+    private String imageUrl; // 상품 이미지 URL
     private Timestamp createdAt;
 
     // 기본 생성자
@@ -121,7 +122,20 @@ public class Product {
         this.category = category;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public boolean isActive() {
         return "ACTIVE".equals(this.status);
+    }
+
+    // EL 표현식 호환용 getter
+    public boolean getActive() {
+        return isActive();
     }
 }

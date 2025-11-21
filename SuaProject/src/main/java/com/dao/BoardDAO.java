@@ -60,14 +60,23 @@ public class BoardDAO {
     }
 
     // 게시글 삭제
-    public boolean deletePost(int boardId, int userId) {
-        String sql = "DELETE FROM board WHERE board_id = ? AND user_id = ?";
+    public boolean deletePost(int boardId, int userId, boolean isAdmin) {
+        String sql;
+        if (isAdmin) {
+            // 어드민은 user_id 체크 없이 삭제 가능
+            sql = "DELETE FROM board WHERE board_id = ?";
+        } else {
+            // 일반 유저는 자신의 게시글만 삭제 가능
+            sql = "DELETE FROM board WHERE board_id = ? AND user_id = ?";
+        }
 
         try (Connection conn = DBConnect.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, boardId);
-            pstmt.setInt(2, userId);
+            if (!isAdmin) {
+                pstmt.setInt(2, userId);
+            }
 
             return pstmt.executeUpdate() > 0;
 

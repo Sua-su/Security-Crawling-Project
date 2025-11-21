@@ -34,10 +34,12 @@ public class BoardDeleteController extends HttpServlet {
 
         try {
             Integer userId = (Integer) session.getAttribute("userId");
+            String role = (String) session.getAttribute("role");
+            boolean isAdmin = "admin".equals(role);
             int boardId = Integer.parseInt(request.getParameter("boardId"));
 
-            // deletePost 메서드가 권한 체크를 포함하고 있음
-            boolean success = boardDAO.deletePost(boardId, userId);
+            // 어드민은 모든 게시글 삭제 가능, 일반 유저는 자신의 게시글만 삭제 가능
+            boolean success = boardDAO.deletePost(boardId, userId, isAdmin);
 
             if (success) {
                 response.sendRedirect(request.getContextPath() + "/board/list?success=" +

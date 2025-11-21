@@ -173,6 +173,27 @@ public class OrderDAO {
         return orders;
     }
 
+    // 상태별 주문 조회
+    public List<Order> getOrdersByStatus(String status) {
+        List<Order> orders = new ArrayList<>();
+        String sql = "SELECT * FROM orders WHERE status = ? ORDER BY created_at DESC";
+
+        try (Connection conn = DBConnect.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, status);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                orders.add(extractOrder(rs));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return orders;
+    }
+
     // ResultSet에서 Order 객체 추출
     private Order extractOrder(ResultSet rs) throws SQLException {
         Order order = new Order();

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/products")
+@WebServlet("/shop/products")
 public class ShopProductsController extends HttpServlet {
 
     private ShopService shopService;
@@ -36,6 +36,6 @@ public class ShopProductsController extends HttpServlet {
         ShopProductsData shopData = shopService.getShopProducts(category);
 
         request.setAttribute("shopData", shopData);
-        request.getRequestDispatcher("/WEB-INF/views/products.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/shop/products.jsp").forward(request, response);
     }
 }

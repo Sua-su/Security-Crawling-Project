@@ -31,7 +31,9 @@ pageEncoding="UTF-8" %> <% Board post = (Board) request.getAttribute("board");
           <!-- 네비게이션 -->
           <div class="nav-links">
             <a href="<%= request.getContextPath() %>/index"> 홈</a>
-            <a href="/board/list"> 게시판 목록</a>
+            <a href="<%= request.getContextPath() %>/board/list">
+              게시판 목록</a
+            >
           </div>
 
           <!-- 게시글 헤더 -->
@@ -54,10 +56,43 @@ pageEncoding="UTF-8" %> <% Board post = (Board) request.getAttribute("board");
           <!-- 게시글 내용 -->
           <div class="post-content"><%= post.getContent() %></div>
 
+          <!-- 첨부파일 -->
+          <% if (post.getAttachments() != null &&
+          !post.getAttachments().isEmpty()) { %>
+          <div class="attachments-section">
+            <h3 class="attachments-title">
+              첨부파일 (<%= post.getAttachments().size() %>)
+            </h3>
+            <ul class="attachments-list">
+              <% for (com.model.BoardAttachment attachment :
+              post.getAttachments()) { %>
+              <li class="attachment-item">
+                <a
+                  href="<%= request.getContextPath() %>/board/download?id=<%= attachment.getAttachmentId() %>"
+                  class="attachment-link"
+                >
+                  <span class="attachment-name"
+                    ><%= attachment.getOriginalFilename() %></span
+                  >
+                  <span class="attachment-info">
+                    <%= attachment.getFormattedFileSize() %> · 다운로드 <%=
+                    attachment.getDownloadCount() %>회
+                  </span>
+                </a>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+          <% } %>
+
           <!-- 게시글 하단 버튼 -->
           <div class="post-footer">
             <div class="button-group">
-              <a href="/board/list" class="btn btn-secondary">목록</a>
+              <a
+                href="<%= request.getContextPath() %>/board/list"
+                class="btn btn-secondary"
+                >목록</a
+              >
 
               <% if (isAuthor || isAdmin) { %>
               <a
@@ -69,7 +104,6 @@ pageEncoding="UTF-8" %> <% Board post = (Board) request.getAttribute("board");
               <form
                 action="<%= request.getContextPath() %>/board/delete"
                 method="post"
-                style="display: inline"
                 onsubmit="return confirm('정말 삭제하시겠습니까?');"
               >
                 <input type="hidden" name="boardId" value="<%= boardId %>" />

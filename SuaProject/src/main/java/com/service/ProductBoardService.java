@@ -87,7 +87,7 @@ public class ProductBoardService {
 
             // 상품 목록 조회
             List<Map<String, Object>> productFeed = DatabaseUtil.executeQuery(
-                    "SELECT product_id, name, description, price, stock, category, file_path, created_at " +
+                    "SELECT product_id, product_name, description, price, stock, category, file_path, created_at " +
                             "FROM products" + filter.toString() + orderSql + " LIMIT ? OFFSET ?",
                     dataParams.toArray(new Object[0]));
             data.setProductFeed(productFeed);

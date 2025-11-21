@@ -74,7 +74,7 @@ public class DirectOrderController extends HttpServlet {
             request.setAttribute("totalPrice", totalPrice);
             request.setAttribute("user", user);
 
-            request.getRequestDispatcher("/WEB-INF/views/directCheckout.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/order/directCheckout.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
             response.sendRedirect(request.getContextPath() + "/products");

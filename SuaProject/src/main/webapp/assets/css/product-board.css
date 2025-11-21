@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 24px;
+    position: relative;
 }
 
 .product-board__header h1 {
@@ -31,7 +32,7 @@
 
 .summary-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 18px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     text-align: center;
@@ -56,7 +57,7 @@
     gap: 16px;
     align-items: end;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 14px;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -72,6 +73,40 @@
     font-weight: 700;
     color: var(--text-secondary);
     text-transform: uppercase;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: white;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.filter-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+.filter-group select:hover,
+.filter-group input:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 .price-inputs {
@@ -92,13 +127,17 @@
 
 .chip-section {
     background: white;
-    border-radius: 16px;
+    border-radius: 14px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .chip-section h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
     margin-bottom: 12px;
+    color: var(--text-primary);
 }
 
 .chips {
@@ -107,7 +146,8 @@
     gap: 10px;
 }
 
-.chip {
+.chip,
+.chips a {
     padding: 8px 16px;
     border-radius: 999px;
     border: 1px solid rgba(100, 100, 100, 0.2);
@@ -115,9 +155,18 @@
     color: var(--text-secondary);
     font-weight: 600;
     background: rgba(100, 100, 100, 0.08);
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.chip.active {
+.chip:hover,
+.chips a:hover {
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.chip.active,
+.chips a.active {
     background: var(--gradient-secondary);
     color: white;
     border-color: transparent;
@@ -144,9 +193,18 @@
     font-size: 2rem;
 }
 
+.product-board .product-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
 .product-desc {
     color: var(--text-secondary);
     min-height: 48px;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .product-meta {
@@ -189,9 +247,17 @@
 .product-board .empty {
     background: white;
     border-radius: 20px;
-    padding: 32px;
+    padding: 48px 32px;
     text-align: center;
-    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-board .empty p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
 }
 
 .pagination {
@@ -199,12 +265,32 @@
     justify-content: center;
     gap: 16px;
     align-items: center;
+    padding: 24px 0;
 }
 
 .pagination a {
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: 700;
     color: var(--primary);
+    border-radius: 14px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pagination span {
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 0 12px;
 }
 
 .news-log {
@@ -216,9 +302,18 @@
 .news-panel,
 .log-panel {
     background: white;
-    border-radius: 16px;
+    border-radius: 14px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.news-panel h3,
+.log-panel h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--text-primary);
 }
 
 .news-panel ul,
@@ -248,6 +343,127 @@
     gap: 20px;
 }
 
+/* Hero Badge */
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.08) 0%, rgba(100, 100, 100, 0.08) 100%);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Alert Styles */
+.alert {
+    padding: 16px 20px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    border-left: 4px solid;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(100, 100, 100, 0.05) 100%);
+    border-left-color: #666666;
+    color: #3A3A3A;
+}
+
+.alert strong {
+    font-weight: 800;
+    color: #1A1A1A;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: white;
+}
+
+/* CTA Panel Actions */
+.cta-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* News/Log Panel List Items */
+.news-panel li,
+.log-panel li {
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(100, 100, 100, 0.02) 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.news-panel li strong {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.news-panel li span,
+.log-panel li span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.log-panel li {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.log-panel .status {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.log-panel .status.success {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.08) 0%, rgba(100, 100, 100, 0.08) 100%);
+    color: #333333;
+}
+
+.log-panel .status.danger {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(100, 100, 100, 0.1) 100%);
+    color: #666666;
+}
+
+/* CTA Panel */
+.cta-panel {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, rgba(100, 100, 100, 0.04) 100%);
+    padding: 32px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.cta-panel h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.cta-panel p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 @media (max-width: 768px) {
     .product-board__header {
         flex-direction: column;
@@ -271,5 +487,10 @@
     .cta-panel {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .cta-actions {
+        width: 100%;
+        justify-content: center;
     }
 }

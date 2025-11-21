@@ -208,6 +208,7 @@ public class ProductDAO {
         product.setStock(rs.getInt("stock"));
         product.setCategory(rs.getString("category"));
         product.setFilePath(rs.getString("file_path"));
+        product.setImageUrl(rs.getString("image_url"));
         product.setCreatedAt(rs.getTimestamp("created_at"));
         return product;
     }

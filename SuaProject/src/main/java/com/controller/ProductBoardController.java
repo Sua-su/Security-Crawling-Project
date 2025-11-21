@@ -66,7 +66,7 @@ public class ProductBoardController extends HttpServlet {
         request.setAttribute("currentPage", currentPage);
 
         // JSP로 포워딩
-        request.getRequestDispatcher("/WEB-INF/views/productBoard.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/shop/productBoard.jsp").forward(request, response);
     }
 
     private Integer parseInteger(String value) {
