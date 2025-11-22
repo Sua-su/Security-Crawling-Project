@@ -55,7 +55,7 @@
 ### Step 1: 테이블 생성
 
 ```bash
-cd SuaProject
+cd BP1901153
 mysql -u root -p -P 13306 -h localhost < database/init.sql
 ```
 
@@ -81,11 +81,11 @@ CREATE TABLE news (
 
 ```bash
 # 빌드
-cd SuaProject
+cd BP1901153
 mvn clean package
 
 # Tomcat에 배포
-cp target/SuaProject-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/
+cp target/BP1901153-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/
 
 # Tomcat 시작
 $CATALINA_HOME/bin/startup.sh
@@ -94,9 +94,9 @@ $CATALINA_HOME/bin/startup.sh
 ### Step 3: 접속 URL
 
 ```
-메인 페이지:    http://localhost:8080/SuaProject/
-뉴스 크롤링:    http://localhost:8080/SuaProject/WEB-INF/content/crawler.jsp
-저장된 목록:    http://localhost:8080/SuaProject/dbList.jsp
+메인 페이지:    http://localhost:8080/BP1901153/
+뉴스 크롤링:    http://localhost:8080/BP1901153/WEB-INF/content/crawler.jsp
+저장된 목록:    http://localhost:8080/BP1901153/dbList.jsp
 ```
 
 ---
@@ -237,7 +237,7 @@ lsof -i :13306
 ## 📁 파일 구조
 
 ```
-SuaProject/
+BP1901153/
 ├── src/main/
 │   ├── java/
 │   │   ├── db/
@@ -310,7 +310,7 @@ mysql -u root -p -P 13306 < database/init.sql
 mvn clean package
 
 # 3. 접속
-http://localhost:8080/SuaProject/
+http://localhost:8080/BP1901153/
 ```
 
 질문이나 추가 기능이 필요하면 언제든지 말씀해주세요! 😊

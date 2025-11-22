@@ -74,14 +74,14 @@
 ### 1️⃣ DB 연결 테스트 (추천)
 
 ```bash
-cd SuaProject
+cd BP1901153
 mvn exec:java -Dexec.mainClass="com.crawler.DBTest"
 ```
 
 ### 2️⃣ 쉘 스크립트로 테스트
 
 ```bash
-cd SuaProject
+cd BP1901153
 ./test-connection.sh
 ```
 
@@ -193,7 +193,7 @@ mvn clean install -U
 ## 📂 파일 구조
 
 ```
-SuaProject/
+BP1901153/
 ├── src/main/
 │   ├── java/
 │   │   ├── db/
@@ -226,8 +226,8 @@ SuaProject/
    ```
 
 3. **Tomcat 배포**
-   - `target/SuaProject-0.0.1-SNAPSHOT.war` → Tomcat webapps
-   - 브라우저에서 `http://localhost:8080/SuaProject` 접속
+   - `target/BP1901153-0.0.1-SNAPSHOT.war` → Tomcat webapps
+   - 브라우저에서 `http://localhost:8080/BP1901153` 접속
 
 ## ✅ 체크리스트
 

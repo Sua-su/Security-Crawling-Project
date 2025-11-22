@@ -57,7 +57,7 @@ SHOW TABLES;
 ### 2. Maven 빌드
 
 ```bash
-cd SuaProject
+cd BP1901153
 mvn clean package
 ```
 
@@ -69,9 +69,9 @@ mvn exec:java -Dexec.mainClass="com.crawler.DBTest"
 
 ### 4. Tomcat 배포
 
-1. `target/SuaProject-0.0.1-SNAPSHOT.war` 파일 생성 확인
+1. `target/BP1901153-0.0.1-SNAPSHOT.war` 파일 생성 확인
 2. Tomcat webapps 폴더에 복사
-3. Tomcat 시작 후 `http://localhost:8080/SuaProject` 접속
+3. Tomcat 시작 후 `http://localhost:8080/BP1901153` 접속
 
 ## 📂 주요 클래스
 

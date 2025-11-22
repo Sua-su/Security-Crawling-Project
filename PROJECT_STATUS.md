@@ -32,7 +32,7 @@ news            # 크롤링한 뉴스 데이터
 ### 데이터베이스 초기화
 
 ```bash
-cd SuaProject
+cd BP1901153
 mysql -u root -p -P 13306 -h localhost < database/init_full.sql
 ```
 
@@ -41,7 +41,7 @@ mysql -u root -p -P 13306 -h localhost < database/init_full.sql
 ## 📁 프로젝트 구조
 
 ```
-SuaProject/
+BP1901153/
 ├── src/main/java/
 │   ├── com/
 │   │   ├── model/              # DTO 클래스
@@ -172,14 +172,14 @@ SHOW TABLES;
 ### Step 3: 프로젝트 빌드
 
 ```bash
-cd SuaProject
+cd BP1901153
 mvn clean package
 ```
 
 ### Step 4: Tomcat 배포
 
 ```bash
-cp target/SuaProject-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/
+cp target/BP1901153-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/
 $CATALINA_HOME/bin/startup.sh
 ```
 

@@ -52,20 +52,20 @@ CREATE TABLE news (
 또는 init.sql 스크립트 실행:
 
 ```bash
-cd SuaProject
+cd BP1901153
 mysql -u root -p -P 13306 -h localhost < database/init.sql
 ```
 
 ### Step 2: 프로젝트 빌드
 
 ```bash
-cd SuaProject
+cd BP1901153
 mvn clean package
 ```
 
 ### Step 3: Tomcat에 배포
 
-1. `target/SuaProject-0.0.1-SNAPSHOT.war` 파일을 Tomcat의 `webapps` 폴더에 복사
+1. `target/BP1901153-0.0.1-SNAPSHOT.war` 파일을 Tomcat의 `webapps` 폴더에 복사
 2. Tomcat 시작
 
 ```bash
@@ -79,7 +79,7 @@ $CATALINA_HOME/bin/startup.bat    # Windows
 브라우저에서 다음 URL 접속:
 
 ```
-http://localhost:8080/SuaProject/WEB-INF/content/crawler.jsp
+http://localhost:8080/BP1901153/WEB-INF/content/crawler.jsp
 ```
 
 크롤링이 실행되면서 자동으로 DB에 저장됩니다!
@@ -87,7 +87,7 @@ http://localhost:8080/SuaProject/WEB-INF/content/crawler.jsp
 ### Step 5: 저장된 뉴스 확인
 
 ```
-http://localhost:8080/SuaProject/dbList.jsp
+http://localhost:8080/BP1901153/dbList.jsp
 ```
 
 ## 📊 주요 기능
@@ -223,7 +223,7 @@ HAVING cnt > 1;
 ### 3. Connection Pool 상태 확인
 
 ```bash
-cd SuaProject
+cd BP1901153
 mvn exec:java -Dexec.mainClass="com.crawler.DBTest"
 ```
 
@@ -257,7 +257,7 @@ mvn exec:java -Dexec.mainClass="com.crawler.DBTest"
 
 **접속 URL:**
 
-- 크롤링: `http://localhost:8080/SuaProject/WEB-INF/content/crawler.jsp`
-- 목록: `http://localhost:8080/SuaProject/dbList.jsp`
+- 크롤링: `http://localhost:8080/BP1901153/WEB-INF/content/crawler.jsp`
+- 목록: `http://localhost:8080/BP1901153/dbList.jsp`
 
 질문이나 추가 기능이 필요하면 언제든지 말씀해주세요! 😊
