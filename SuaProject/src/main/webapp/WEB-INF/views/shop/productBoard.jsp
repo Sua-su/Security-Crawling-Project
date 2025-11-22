@@ -82,7 +82,7 @@
         <div>
             <p class="hero-badge">크롤링 데이터 → 상품화 → 판매/다운로드</p>
             <h1>크롤링 상품 게시판</h1>
-            <p>뉴스/보안 데이터를 상품형태로 큐레이션하고 쇼핑몰, 게시판, 장바구니 플로우로 자연스럽게 연결합니다.</p>
+            <p>데이터및 다양한 상품을 Zip파일, 제품 등을 판매 합니다.</p>
         </div>
         <div class="header-actions">
             <a href="<%= contextPath %>/crawler" class="btn btn-secondary">크롤링 실행</a>
@@ -209,8 +209,10 @@
             <div class="product-actions">
                 <a class="btn btn-secondary" href="<%= contextPath %>/shop/productDetail?id=<%= productId %>">상세보기</a>
                 <% if (hasStock) { %>
-                <form action="<%= contextPath %>/shop/addToCart" method="post">
+                <form action="<%= contextPath %>/cart/add" method="post">
                     <input type="hidden" name="productId" value="<%= productId %>">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="returnUrl" value="<%= request.getRequestURL() + (request.getQueryString() != null ? "?" + request.getQueryString() : "") %>">
                     <button type="submit" class="btn btn-primary">장바구니</button>
                 </form>
                 <% } else { %>
@@ -285,16 +287,6 @@
         </div>
     </section>
 
-    <div class="cta-panel">
-        <div>
-            <h3>다음 단계</h3>
-            <p>상품이 업데이트되면 쇼핑몰·게시판·마이페이지를 순서대로 점검해보세요.</p>
-        </div>
-        <div class="cta-actions">
-            <a href="<%= contextPath %>/cart" class="btn btn-secondary">장바구니 테스트</a>
-            <a href="<%= contextPath %>/board/list" class="btn btn-outline">게시판 이동</a>
-        </div>
-    </div>
-</div>
+    
 </body>
 </html>

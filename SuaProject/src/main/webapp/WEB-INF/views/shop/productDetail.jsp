@@ -1,7 +1,8 @@
 <%@ page import="com.model.Product" %> <%@ page contentType="text/html;
-charset=UTF-8" pageEncoding="UTF-8"%> <% Product product = (Product)
-request.getAttribute("product"); boolean hasStock = product.getStock() > 0; int
-productId = product.getProductId(); %>
+charset=UTF-8" pageEncoding="UTF-8"%> 
+<% Product product = (Product)request.getAttribute("product");
+boolean hasStock = product.getStock() > 0; int
+productId = product.getProductId(); int maxStock = product.getStock(); %>
 
 <!DOCTYPE html>
 <html>
@@ -70,8 +71,7 @@ productId = product.getProductId(); %>
 
       <% String stockClass = product.getStock() > 10 ? "stock-available" :
       product.getStock() > 0 ? "stock-low" : "stock-out"; String stockMessage =
-      product.getStock() > 10 ? "재고 충분" : product.getStock() > 0 ? "재고
-      부족 (남은 수량: " + product.getStock() + "개)" : "품절"; %>
+      product.getStock() > 10 ? "재고 충분" : product.getStock() > 0 ? "재고부족 (남은 수량: " + product.getStock() + "개)" : "품절"; %>
 
       <div class="stock-info <%= stockClass %>"><%= stockMessage %></div>
 
@@ -85,7 +85,7 @@ productId = product.getProductId(); %>
         <input
           type="hidden"
           name="returnUrl"
-          value="/shop/productDetail?id=<%= productId %>"
+          value="<%= request.getContextPath() %>/shop/productDetail?id=<%= productId %>"
         />
 
         <div class="quantity-section">
@@ -148,34 +148,40 @@ productId = product.getProductId(); %>
       <% } %>
     </div>
 
+    <input type="hidden" id="maxStockValue" value="<%= maxStock %>" />
+
     <script>
-      const maxStock = <%= product.getStock() %>;
+      var availableStock = parseInt(
+        document.getElementById("maxStockValue").value
+      );
 
       function decreaseQuantity() {
-          const input = document.getElementById('quantity');
-          if (input.value > 1) {
-              input.value = parseInt(input.value) - 1;
-          }
+        const input = document.getElementById("quantity");
+        if (input.value > 1) {
+          input.value = parseInt(input.value) - 1;
+        }
       }
 
       function increaseQuantity() {
-          const input = document.getElementById('quantity');
-          if (input.value < maxStock) {
-              input.value = parseInt(input.value) + 1;
-          }
+        const input = document.getElementById("quantity");
+        if (input.value < availableStock) {
+          input.value = parseInt(input.value) + 1;
+        }
       }
 
       function validateQuantity() {
-          const quantity = parseInt(document.getElementById('quantity').value);
-          if (quantity < 1) {
-              alert('최소 수량은 1개입니다.');
-              return false;
-          }
-          if (quantity > maxStock) {
-              alert('재고 수량을 초과할 수 없습니다. (최대: ' + maxStock + '개)');
-              return false;
-          }
-          return true;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        if (quantity < 1) {
+          alert("최소 수량은 1개입니다.");
+          return false;
+        }
+        if (quantity > availableStock) {
+          alert(
+            "재고 수량을 초과할 수 없습니다. (최대: " + availableStock + "개)"
+          );
+          return false;
+        }
+        return true;
       }
     </script>
   </body>

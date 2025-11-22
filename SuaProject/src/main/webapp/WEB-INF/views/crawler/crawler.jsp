@@ -38,9 +38,9 @@
                    class="btn btn-primary" style="text-decoration: none;">
                     MLB LA다저스
                 </a>
-                <a href="<%= request.getContextPath() %>/crawler?keyword=MLB+양키스" 
+                <a href="<%= request.getContextPath() %>/crawler?keyword=MLB+야마모토" 
                    class="btn btn-primary" style="text-decoration: none;">
-                    MLB 양키스
+                    MLB 야마모토
                 </a>
                 <a href="<%= request.getContextPath() %>/crawler?keyword=MLB+오타니" 
                    class="btn btn-primary" style="text-decoration: none;">

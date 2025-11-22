@@ -21,8 +21,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f6fa;
-            color: #2c3e50;
+            background: #F1F1F1;
+            color: #2c2c2c;
         }
 
         .admin-container {
@@ -33,72 +33,69 @@
 
         .admin-header {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 24px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .admin-header h1 {
-            color: #2c3e50;
-            font-size: 28px;
-        }
-
-        .back-link {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 8px 16px;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            background: #3498db;
-            color: white;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #000000 0%, #444444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .filter-section {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .filter-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
             padding: 10px 20px;
-            border: 1px solid #ddd;
+            border: 1px solid #d0d0d0;
             background: white;
-            border-radius: 5px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
-            color: #2c3e50;
+            color: #6B7280;
+            font-weight: 600;
         }
 
-        .filter-btn:hover,
+        .filter-btn:hover {
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(100,100,100,0.05) 100%);
+            color: #000000;
+        }
+
         .filter-btn.active {
-            background: #3498db;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
             color: white;
-            border-color: #3498db;
+            border-color: transparent;
         }
 
         .orders-table-section {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .orders-table {
@@ -107,119 +104,142 @@
         }
 
         .orders-table thead {
-            background: #34495e;
-            color: white;
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(100,100,100,0.05) 100%);
         }
 
-        .orders-table th,
-        .orders-table td {
-            padding: 12px;
+        .orders-table th {
+            padding: 16px;
             text-align: left;
-            border-bottom: 1px solid #ecf0f1;
+            font-weight: 700;
+            color: #374151;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .orders-table td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #6B7280;
         }
 
         .orders-table tbody tr:hover {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(100,100,100,0.02) 100%);
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .badge-pending {
-            background: #fff3cd;
-            color: #856404;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+            color: #4A4A4A;
         }
 
         .badge-processing {
-            background: #cce5ff;
-            color: #004085;
+            background: linear-gradient(135deg, #D8D8D8 0%, #C0C0C0 100%);
+            color: #2C2C2C;
         }
 
         .badge-shipped {
-            background: #d1ecf1;
-            color: #0c5460;
+            background: linear-gradient(135deg, #BEBEBE 0%, #A0A0A0 100%);
+            color: white;
         }
 
         .badge-delivered {
-            background: #d4edda;
-            color: #155724;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
         }
 
         .badge-cancelled {
-            background: #f8d7da;
-            color: #721c24;
+            background: linear-gradient(135deg, #E0E0E0 0%, #CACACA 100%);
+            color: #6B6B6B;
         }
 
         .action-btn {
-            padding: 5px 10px;
-            margin: 0 2px;
+            padding: 8px 16px;
+            margin: 0 4px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 12px;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-view {
-            background: #3498db;
+            background: linear-gradient(135deg, #4A4A4A 0%, #2C2C2C 100%);
             color: white;
         }
 
         .btn-view:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .btn-update {
-            background: #27ae60;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
         }
 
         .btn-update:hover {
-            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         .message {
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-weight: 600;
         }
 
         .message-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: #F0F0F0;
+            color: #1a1a1a;
+            border-left: 4px solid #000000;
         }
 
         .message-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: #F5F5F5;
+            color: #4A4A4A;
+            border-left: 4px solid #6B6B6B;
         }
 
         .no-data {
             text-align: center;
-            padding: 40px;
-            color: #7f8c8d;
+            padding: 60px;
+            color: #9CA3AF;
+            font-size: 1.1rem;
         }
 
         .status-form {
             display: inline-flex;
-            gap: 5px;
+            gap: 8px;
             align-items: center;
         }
 
         .status-select {
-            padding: 5px 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 8px 12px;
+            border: 1px solid #d0d0d0;
+            border-radius: 8px;
             font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .status-select:focus {
+            outline: none;
+            border-color: #2c2c2c;
+            box-shadow: 0 0 0 3px rgba(44,44,44,0.1);
         }
     </style>
 </head>
@@ -239,26 +259,26 @@
     </div>
 
         <c:if test="${param.message == 'status_updated'}">
-            <div class="message message-success">Order status updated successfully!</div>
+            <div class="message message-success">주문 상태가 성공적으로 업데이트되었습니다!</div>
         </c:if>
         <c:if test="${param.error == 'update_failed'}">
-            <div class="message message-error">Failed to update order status. Please try again.</div>
+            <div class="message message-error">주문 상태 업데이트에 실패했습니다. 다시 시도해주세요.</div>
         </c:if>
 
         <div class="filter-section">
             <div class="filter-buttons">
                 <a href="${pageContext.request.contextPath}/admin/orders" 
-                   class="filter-btn ${empty param.status ? 'active' : ''}">All Orders</a>
+                   class="filter-btn ${empty param.status ? 'active' : ''}">전체 주문</a>
                 <a href="${pageContext.request.contextPath}/admin/orders?status=PENDING" 
-                   class="filter-btn ${param.status == 'PENDING' ? 'active' : ''}">Pending</a>
+                   class="filter-btn ${param.status == 'PENDING' ? 'active' : ''}">대기중</a>
                 <a href="${pageContext.request.contextPath}/admin/orders?status=PROCESSING" 
-                   class="filter-btn ${param.status == 'PROCESSING' ? 'active' : ''}">Processing</a>
+                   class="filter-btn ${param.status == 'PROCESSING' ? 'active' : ''}">처리중</a>
                 <a href="${pageContext.request.contextPath}/admin/orders?status=SHIPPED" 
-                   class="filter-btn ${param.status == 'SHIPPED' ? 'active' : ''}">Shipped</a>
+                   class="filter-btn ${param.status == 'SHIPPED' ? 'active' : ''}">배송중</a>
                 <a href="${pageContext.request.contextPath}/admin/orders?status=DELIVERED" 
-                   class="filter-btn ${param.status == 'DELIVERED' ? 'active' : ''}">Delivered</a>
+                   class="filter-btn ${param.status == 'DELIVERED' ? 'active' : ''}">배송완료</a>
                 <a href="${pageContext.request.contextPath}/admin/orders?status=CANCELLED" 
-                   class="filter-btn ${param.status == 'CANCELLED' ? 'active' : ''}">Cancelled</a>
+                   class="filter-btn ${param.status == 'CANCELLED' ? 'active' : ''}">취소됨</a>
             </div>
         </div>
 
@@ -268,14 +288,14 @@
                     <table class="orders-table">
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>User</th>
-                                <th>Total Amount</th>
-                                <th>Status</th>
-                                <th>Payment</th>
-                                <th>Shipping</th>
-                                <th>Order Date</th>
-                                <th>Actions</th>
+                                <th>주문번호</th>
+                                <th>회원</th>
+                                <th>총 금액</th>
+                                <th>상태</th>
+                                <th>결제방법</th>
+                                <th>배송지</th>
+                                <th>주문일</th>
+                                <th>작업</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -297,13 +317,13 @@
                                             <input type="hidden" name="action" value="updateStatus">
                                             <input type="hidden" name="orderId" value="${order.orderId}">
                                             <select name="status" class="status-select">
-                                                <option value="PENDING" ${order.status == 'PENDING' ? 'selected' : ''}>Pending</option>
-                                                <option value="PROCESSING" ${order.status == 'PROCESSING' ? 'selected' : ''}>Processing</option>
-                                                <option value="SHIPPED" ${order.status == 'SHIPPED' ? 'selected' : ''}>Shipped</option>
-                                                <option value="DELIVERED" ${order.status == 'DELIVERED' ? 'selected' : ''}>Delivered</option>
-                                                <option value="CANCELLED" ${order.status == 'CANCELLED' ? 'selected' : ''}>Cancelled</option>
+                                                <option value="PENDING" ${order.status == 'PENDING' ? 'selected' : ''}>대기중</option>
+                                                <option value="PROCESSING" ${order.status == 'PROCESSING' ? 'selected' : ''}>처리중</option>
+                                                <option value="SHIPPED" ${order.status == 'SHIPPED' ? 'selected' : ''}>배송중</option>
+                                                <option value="DELIVERED" ${order.status == 'DELIVERED' ? 'selected' : ''}>배송완료</option>
+                                                <option value="CANCELLED" ${order.status == 'CANCELLED' ? 'selected' : ''}>취소됨</option>
                                             </select>
-                                            <button type="submit" class="action-btn btn-update">Update</button>
+                                            <button type="submit" class="action-btn btn-update">변경</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -312,7 +332,7 @@
                     </table>
                 </c:when>
                 <c:otherwise>
-                    <div class="no-data">No orders found</div>
+                    <div class="no-data">주문이 없습니다</div>
                 </c:otherwise>
             </c:choose>
         </div>

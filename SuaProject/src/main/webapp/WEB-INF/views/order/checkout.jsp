@@ -5,8 +5,8 @@ import="com.model.User" %> <% String contextPath = request.getContextPath();
 CheckoutData checkoutData = (CheckoutData) request.getAttribute("checkoutData");
 User user = checkoutData.getUser(); List<Cart>
   cartItems = checkoutData.getCartItems(); int totalPrice =
-  checkoutData.getTotalPrice(); // 주문 ID 생성 String orderId = "ORDER_" +
-  System.currentTimeMillis(); %>
+  checkoutData.getTotalPrice(); String orderId = (String)
+  request.getAttribute("orderId"); %>
 
   <!DOCTYPE html>
   <html>
@@ -127,21 +127,25 @@ User user = checkoutData.getUser(); List<Cart>
         </div>
       </div>
 
-      <script>
-        // 토스페이먼츠 테스트 키
-        const clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
-        const tossPayments = TossPayments(clientKey);
+      <% String jsOrderId = orderId; int jsItemCount = cartItems.size(); String
+      jsFirstProductName = cartItems.get(0).getProductName(); int jsAmount =
+      totalPrice; String jsCustomerName = user.getName(); String jsCustomerEmail
+      = user.getEmail(); String jsSuccessUrl = request.getScheme() + "://" +
+      request.getServerName() + ":" + request.getServerPort() + contextPath +
+      "/payment/success"; String jsFailUrl = request.getScheme() + "://" +
+      request.getServerName() + ":" + request.getServerPort() + contextPath +
+      "/payment/fail"; %>
+      <script type="text/javascript">
+        var clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq';
+        var tossPayments = TossPayments(clientKey);
 
         document.getElementById('paymentButton').addEventListener('click', function () {
-            const orderId = '<%= orderId %>';
-            const itemCount = <%= cartItems.size() %>;
-            const orderName =
-                '<%= cartItems.get(0).getProductName() %>' +
-                (itemCount > 1 ? ' 외 ' + (itemCount - 1) + '건' : '');
-
-            const amount = <%= totalPrice %>;
-            const customerName = '<%= user.getName() %>';
-            const customerEmail = '<%= user.getEmail() %>';
+            var orderId = '<%= jsOrderId %>';
+            var itemCount = <%= jsItemCount %>;
+            var orderName = '<%= jsFirstProductName %>' + (itemCount > 1 ? ' 외 ' + (itemCount - 1) + '건' : '');
+            var amount = <%= jsAmount %>;
+            var customerName = '<%= jsCustomerName %>';
+            var customerEmail = '<%= jsCustomerEmail %>';
 
             tossPayments.requestPayment('카드', {
                 amount: amount,
@@ -149,12 +153,8 @@ User user = checkoutData.getUser(); List<Cart>
                 orderName: orderName,
                 customerName: customerName,
                 customerEmail: customerEmail,
-
-                successUrl:
-                    '<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + contextPath %>/payment/success',
-
-                failUrl:
-                    '<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + contextPath %>/payment/fail',
+                successUrl: '<%= jsSuccessUrl %>',
+                failUrl: '<%= jsFailUrl %>'
             }).catch(function (error) {
                 if (error.code === 'USER_CANCEL') {
                     alert('결제를 취소하셨습니다.');

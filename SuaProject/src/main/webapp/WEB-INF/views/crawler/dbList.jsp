@@ -21,7 +21,7 @@
 <div class="container">
     <h1>저장된 뉴스 목록</h1>
     <p style="color: #666; margin-bottom: 20px;">
-        MariaDB (포트: 13306) - BP1901153 데이터베이스
+     
     </p>
 
     <!-- 통계 박스 -->

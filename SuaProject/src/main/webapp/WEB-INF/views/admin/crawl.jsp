@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crawl Data Management - Admin</title>
+    <title>크롤링 데이터 관리 - Admin</title>
     <style>
         * {
             margin: 0;
@@ -16,8 +16,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f6fa;
-            color: #2c3e50;
+            background: #F1F1F1;
+            color: #2c2c2c;
         }
 
         .admin-container {
@@ -28,122 +28,50 @@
 
         .admin-header {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 24px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .admin-header h1 {
-            color: #2c3e50;
-            font-size: 28px;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #000000 0%, #444444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .back-link {
-            color: #3498db;
+            color: #2c2c2c;
             text-decoration: none;
             font-size: 14px;
             padding: 8px 16px;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s;
+            border: 1px solid #d0d0d0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            font-weight: 600;
         }
 
         .back-link:hover {
-            background: #3498db;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
             color: white;
-        }
-
-        .tabs {
-            background: white;
-            padding: 0 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            display: flex;
-            gap: 0;
-        }
-
-        .tab-btn {
-            padding: 15px 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            color: #7f8c8d;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .tab-btn.active {
-            color: #3498db;
-            border-bottom-color: #3498db;
-        }
-
-        .tab-btn:hover {
-            color: #3498db;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .filter-section {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        .filter-form {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .filter-select {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-
-        .filter-btn:hover {
-            background: #2980b9;
-        }
-
-        .clear-btn {
-            background: #e74c3c;
-        }
-
-        .clear-btn:hover {
-            background: #c0392b;
+            border-color: #2c2c2c;
         }
 
         .data-table-section {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 28px;
+            margin-top: 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .data-table {
@@ -152,96 +80,111 @@
         }
 
         .data-table thead {
-            background: #34495e;
-            color: white;
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(100,100,100,0.05) 100%);
         }
 
-        .data-table th,
-        .data-table td {
-            padding: 12px;
+        .data-table th {
+            padding: 16px;
             text-align: left;
-            border-bottom: 1px solid #ecf0f1;
+            font-weight: 700;
+            color: #374151;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #6B7280;
         }
 
         .data-table tbody tr:hover {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(100,100,100,0.02) 100%);
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .badge-success {
-            background: #d4edda;
-            color: #155724;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
         }
 
         .badge-error {
-            background: #f8d7da;
-            color: #721c24;
+            background: linear-gradient(135deg, #E0E0E0 0%, #CACACA 100%);
+            color: #6B6B6B;
         }
 
         .badge-info {
-            background: #d1ecf1;
-            color: #0c5460;
+            background: linear-gradient(135deg, #B8B8B8 0%, #8A8A8A 100%);
+            color: white;
         }
 
         .action-btn {
-            padding: 5px 10px;
-            margin: 0 2px;
+            padding: 8px 16px;
+            margin: 0 4px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 12px;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-view {
-            background: #3498db;
+            background: linear-gradient(135deg, #4A4A4A 0%, #2C2C2C 100%);
             color: white;
         }
 
         .btn-view:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .btn-delete {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #6B6B6B 0%, #4A4A4A 100%);
             color: white;
         }
 
         .btn-delete:hover {
-            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .message {
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-weight: 600;
         }
 
         .message-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: #F0F0F0;
+            color: #1a1a1a;
+            border-left: 4px solid #000000;
         }
 
         .message-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: #F5F5F5;
+            color: #4A4A4A;
+            border-left: 4px solid #6B6B6B;
         }
 
         .no-data {
             text-align: center;
-            padding: 40px;
-            color: #7f8c8d;
+            padding: 60px;
+            color: #9CA3AF;
+            font-size: 1.1rem;
         }
 
         .news-title {
@@ -249,87 +192,55 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            font-weight: 600;
         }
 
         .news-url {
-            color: #3498db;
+            color: #2c2c2c;
             text-decoration: none;
             font-size: 12px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+            transition: all 0.3s ease;
         }
 
         .news-url:hover {
-            text-decoration: underline;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
         }
     </style>
-    <script>
-        function showTab(tabName) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Remove active class from all tab buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected tab content
-            document.getElementById(tabName + '-tab').classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-    </script>
 </head>
 <body>
     <div class="admin-container">
         <div class="admin-header">
-            <h1>Crawl Data Management</h1>
-            <a href="${pageContext.request.contextPath}/admin/dashboard" class="back-link">← Back to Dashboard</a>
+            <h1>크롤링 데이터 관리</h1>
+            <a href="${pageContext.request.contextPath}/admin/dashboard" class="back-link">← 대시보드로 돌아가기</a>
         </div>
 
         <c:if test="${param.message == 'deleted'}">
-            <div class="message message-success">News deleted successfully!</div>
+            <div class="message message-success">뉴스가 성공적으로 삭제되었습니다!</div>
         </c:if>
         <c:if test="${param.message == 'logs_cleared'}">
-            <div class="message message-success">Crawl logs cleared successfully!</div>
+            <div class="message message-success">크롤링 로그가 성공적으로 삭제되었습니다!</div>
         </c:if>
         <c:if test="${param.error != null}">
-            <div class="message message-error">Operation failed. Please try again.</div>
+            <div class="message message-error">작업에 실패했습니다. 다시 시도해주세요.</div>
         </c:if>
 
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('news')">News Data</button>
-            <button class="tab-btn" onclick="showTab('logs')">Crawl Logs</button>
-        </div>
-
-        <!-- News Tab -->
-        <div id="news-tab" class="tab-content active">
-            <div class="filter-section">
-                <form class="filter-form" action="${pageContext.request.contextPath}/admin/crawl" method="get">
-                    <input type="hidden" name="tab" value="news">
-                    <select name="company" class="filter-select">
-                        <option value="">All Companies</option>
-                        <option value="samsung" ${param.company == 'samsung' ? 'selected' : ''}>Samsung</option>
-                        <option value="apple" ${param.company == 'apple' ? 'selected' : ''}>Apple</option>
-                        <option value="google" ${param.company == 'google' ? 'selected' : ''}>Google</option>
-                    </select>
-                    <button type="submit" class="filter-btn">Filter</button>
-                </form>
-            </div>
-
-            <div class="data-table-section">
+        <div class="data-table-section">
                 <c:choose>
                     <c:when test="${not empty newsList}">
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Company</th>
+                                    <th>   </th>
+                                    <th>제목</th>
+                                    <th>기업</th>
                                     <th>URL</th>
-                                    <th>Crawled Date</th>
-                                    <th>Actions</th>
+                                    <th>        </th>
+                                    <th>삭제</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -345,7 +256,7 @@
                                             <span class="badge badge-info">${news.company}</span>
                                         </td>
                                         <td>
-                                            <a href="${news.url}" target="_blank" class="news-url">View</a>
+                                            <a href="${news.url}" target="_blank" class="news-url">보기</a>
                                         </td>
                                         <td><fmt:formatDate value="${news.createdAt}" pattern="yyyy-MM-dd HH:mm"/></td>
                                         <td>
@@ -353,8 +264,8 @@
                                                 <input type="hidden" name="action" value="deleteNews">
                                                 <input type="hidden" name="newsId" value="${news.newsId}">
                                                 <button type="submit" class="action-btn btn-delete" 
-                                                        onclick="return confirm('Are you sure you want to delete this news?')">
-                                                    Delete
+                                                        onclick="return confirm('이 뉴스를 삭제하시겠습니까?')">
+                                                    삭제
                                                 </button>
                                             </form>
                                         </td>
@@ -364,59 +275,9 @@
                         </table>
                     </c:when>
                     <c:otherwise>
-                        <div class="no-data">No news data found</div>
+                        <div class="no-data">뉴스 데이터가 없습니다</div>
                     </c:otherwise>
                 </c:choose>
-            </div>
-        </div>
-
-        <!-- Logs Tab -->
-        <div id="logs-tab" class="tab-content">
-            <div class="filter-section">
-                <form action="${pageContext.request.contextPath}/admin/crawl" method="post" style="display: inline;">
-                    <input type="hidden" name="action" value="clearLogs">
-                    <button type="submit" class="filter-btn clear-btn" 
-                            onclick="return confirm('Are you sure you want to clear all crawl logs?')">
-                        Clear All Logs
-                    </button>
-                </form>
-            </div>
-
-            <div class="data-table-section">
-                <c:choose>
-                    <c:when test="${not empty crawlLogs}">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Status</th>
-                                    <th>Message</th>
-                                    <th>Items Crawled</th>
-                                    <th>Time</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${crawlLogs}" var="log">
-                                    <tr>
-                                        <td>${log.logId}</td>
-                                        <td>
-                                            <span class="badge ${log.status == 'SUCCESS' ? 'badge-success' : 'badge-error'}">
-                                                ${log.status}
-                                            </span>
-                                        </td>
-                                        <td>${log.message}</td>
-                                        <td>${log.itemsCrawled}</td>
-                                        <td><fmt:formatDate value="${log.createdAt}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-                                    </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
-                    </c:when>
-                    <c:otherwise>
-                        <div class="no-data">No crawl logs found</div>
-                    </c:otherwise>
-                </c:choose>
-            </div>
         </div>
     </div>
 </body>

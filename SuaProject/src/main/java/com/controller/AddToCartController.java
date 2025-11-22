@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URLEncoder;
 
-@WebServlet("/shop/addToCart")
+@WebServlet(urlPatterns = { "/shop/addToCart", "/cart/add" })
 public class AddToCartController extends HttpServlet {
 
     private CartDAO cartDAO;
@@ -39,10 +39,20 @@ public class AddToCartController extends HttpServlet {
         }
 
         try {
-            Integer userId = (Integer) session.getAttribute("userId");
+            // User 객체에서 userId 가져오기
+            com.model.User user = (com.model.User) session.getAttribute("user");
+            if (user == null) {
+                response.sendRedirect(request.getContextPath() + "/auth/login");
+                return;
+            }
+
+            int userId = user.getUserId();
             int productId = Integer.parseInt(request.getParameter("productId"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             String returnUrl = request.getParameter("returnUrl");
+
+            System.out.println(
+                    "🛒 장바구니 추가 요청 - userId: " + userId + ", productId: " + productId + ", quantity: " + quantity);
 
             // 상품 정보 조회
             Product product = productDAO.getProductById(productId);
@@ -72,9 +82,7 @@ public class AddToCartController extends HttpServlet {
                     ", quantity: " + quantity + ", success: " + success);
 
             if (success) {
-                String redirectUrl = returnUrl != null ? returnUrl : request.getContextPath() + "/cart";
-                response.sendRedirect(redirectUrl +
-                        (redirectUrl.contains("?") ? "&" : "?") + "success=" +
+                response.sendRedirect(request.getContextPath() + "/products?success=" +
                         URLEncoder.encode("장바구니에 추가되었습니다.", "UTF-8"));
             } else {
                 throw new Exception("장바구니 추가 실패");

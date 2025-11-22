@@ -51,10 +51,10 @@
 
   <section class="hero">
     <div class="hero-left">
-      <p class="hero-badge">회원 → 메인 → 게시판/쇼핑/마이페이지 플로우</p>
+      <p class="hero-badge">정보 수집 사이트 SCCC</p>
       <h1>Security Crawling Control Center</h1>
       <p>
-        MLB 뉴스 크롤링, 커뮤니티, 상품 판매, 장바구니·결제, 마이페이지까지 한 번에 연결된 운영 허브입니다.
+        뉴스 크롤링, 커뮤니티, 상품 판매, 장바구니·결제, 마이페이지까지 제공하는 허브입니다.
       </p>
       <div class="hero-actions">
         <a href="<%= contextPath %>/crawler" class="btn btn-primary">크롤링 실행</a>
@@ -111,54 +111,56 @@
   </section>
 
   <section class="journey-section">
-    <h2>확인용</h2>
+    <h2>제공 서비스</h2>
     <div class="journey-grid">
       <div class="journey-card">
         <span class="journey-icon">로그인</span>
         <h3>회원가입 · 로그인</h3>
-        <p>auth 모듈에서 회원 등록 및 권한(관리자/일반) 부여.</p>
+        <p>회원 가입, 로그인 서비스 제공합니다.</p>
       </div>
       <div class="journey-card">
         <span class="journey-icon"> 상품</span>
         <h3>크롤링 상품 게시판</h3>
-        <p>실시간 크롤링 결과를 카드형으로 제공, 상품 구매와 연계.</p>
+        <p>실시간 네이버 뉴스 크롤링을 결과를 제공합니다.</p>
       </div>
       <div class="journey-card">
         <span class="journey-icon"> 게시판</span>
         <h3>게시판 & 댓글</h3>
-        <p>게시글 작성, 검색, 댓글/조회수 집계, 커뮤니티 운영.</p>
+        <p>게시글 작성, 검색, 댓글 서비스를 제공합니다.</p>
       </div>
       <div class="journey-card">
         <span class="journey-icon"> 쇼핑</span>
-        <h3>쇼핑몰 → 장바구니</h3>
-        <p>크롤링 데이터 상품 구매, 장바구니 수량/재고 검증.</p>
+        <h3>쇼핑몰</h3>
+        <p>크롤링 데이터 상품 구매 서비스를 제공합니다.</p>
       </div>
       <div class="journey-card">
         <span class="journey-icon"> 결제 </span>
         <h3>결제 & 주문</h3>
-        <p>checkout.jsp에서 결제 수단 선택, 주문 테이블에 기록.</p>
+        <p>토스연동으로 결제 기능 서비스를 제공합니다.</p>
       </div>
       <div class="journey-card">
-        <span class="journey-icon"> 마이페이지 </span>
+        <span class="journey-icon"> 개인정보 </span>
         <h3>마이페이지</h3>
-        <p>회원 정보, 다운로드, 주문 이력 및 상태 확인.</p>
+        <p>회원 정보, 다운로드, 주문 이력 및 상태 확인 서비스를 제공합니다.</p>
       </div>
     </div>
   </section>
 
+<h2>제공 서비스 바로가기</h2>
   <section class="quick-menu">
+      
     <a href="<%= contextPath %>/crawler" class="menu-item">
-      <div class="icon">가동</div>
+      <div class="icon">크롤링</div>
       <div class="title">크롤링 실행</div>
-      <div class="desc">Jsoup + HikariCP</div>
+      <div class="desc">Jsoup</div>
     </a>
     <a href="<%= contextPath %>/dbList" class="menu-item">
       <div class="icon"> 뉴스 </div>
       <div class="title">뉴스 데이터</div>
-      <div class="desc">DB 저장 리스트</div>
+      <div class="desc">크롤링 저장 리스트</div>
     </a>
     <a href="<%= contextPath %>/products" class="menu-item primary">
-      <div class="icon">장바구니</div>
+      <div class="icon">쇼핑몰</div>
       <div class="title">상품</div>
       <div class="desc">크롤링 상품 구매</div>
     </a>
@@ -168,9 +170,9 @@
       <div class="desc">게시글·댓글</div>
     </a>
     <a href="<%= contextPath %>/cart" class="menu-item">
-      <div class="icon"> 쇼핑몰 </div>
-      <div class="title">장바구니</div>
-      <div class="desc">수량 & 재고 관리</div>
+      <div class="icon"> 장바구니 </div>
+      <div class="title">장바구니 관리</div>
+      <div class="desc">상품 수량 및 관리</div>
     </a>
     <a href="<%= contextPath %>/mypage" class="menu-item">
       <div class="icon">개인</div>
@@ -315,25 +317,23 @@
 
     <div class="insight-card">
       <div class="insight-header">
-        <h3> 다음 액션</h3>
+        <h3> Todo</h3>
       </div>
       <ul class="next-actions">
-        <li> 크롤링 완료 후 <strong>상품 게시판</strong>에 노출</li>
-        <li> 게시판 공지 등록 및 댓글 모니터링</li>
-        <li> 쇼핑몰 재고/가격 최신화</li>
-        <li> 장바구니 → 결제 테스트</li>
-        <li> 마이페이지 주문·다운로드 검증</li>
+        <li> 크롤링 정보수집 자동화</li>
+        <li> 크롤링 텍스트 데이터 자동 판단</li>
+        <li> 특정 단어 위험도 측정 </li>
+        <li> 위험도에 따른 분류 자동화 </li>
+        <li> 게시글 작성자의 데이터 수집 및 관리</li>
+        <li> 작성자가 높은 위험도의 게시글 작성 시 따로 분류</li>
+        <li> NFT 상품 처리 기획 </li>
       </ul>
     </div>
   </section>
 
   <div class="cta-panel">
     <div>
-      <h3>MariaDB + Tomcat + Eclipse test </h3>
-      <div class="cta-actions">
-        <a href="<%= contextPath %>/products" class="btn btn-primary">상품 게시판 확인</a>
-        <a href="<%= contextPath %>/products" class="btn btn-secondary">상품 보러가기</a>
-      </div>
+      <h3>1901153 Su </h3>
     </div>
     <div class="cta-meta">
 

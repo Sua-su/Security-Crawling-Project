@@ -40,7 +40,11 @@ public class CheckoutController extends HttpServlet {
             return;
         }
 
+        // 주문 ID 생성 (현재 시간 + 사용자 ID)
+        String orderId = "ORDER_" + System.currentTimeMillis() + "_" + userId;
+
         request.setAttribute("checkoutData", checkoutData);
+        request.setAttribute("orderId", orderId);
         request.getRequestDispatcher("/WEB-INF/views/order/checkout.jsp").forward(request, response);
     }
 

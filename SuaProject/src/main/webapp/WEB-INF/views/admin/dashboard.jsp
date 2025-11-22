@@ -132,7 +132,7 @@
     <div class="admin-table-container">
         <div class="table-header">
             <h2>최근 주문</h2>
-            <a href="<%= contextPath %>/admin/orders" class="btn btn-primary">전체 보기</a>
+            <a href="<%= contextPath %>/admin/orders" class="view-all-link">전체 보기 →</a>
         </div>
         <%
             List<Map<String, Object>> recentOrders = (List<Map<String, Object>>) stats.get("recentOrders");
@@ -172,7 +172,7 @@
     <div class="admin-table-container">
         <div class="table-header">
             <h2>최근 가입 회원</h2>
-            <a href="<%= contextPath %>/admin/users" class="btn btn-primary">전체 보기</a>
+            <a href="<%= contextPath %>/admin/users" class="view-all-link">전체 보기 →</a>
         </div>
         <%
             List<Map<String, Object>> recentUsers = (List<Map<String, Object>>) stats.get("recentUsers");

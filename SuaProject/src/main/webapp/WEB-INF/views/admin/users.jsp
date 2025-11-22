@@ -20,8 +20,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f6fa;
-            color: #2c3e50;
+            background: #F1F1F1;
+            color: #2c2c2c;
         }
 
         .admin-container {
@@ -32,77 +32,79 @@
 
         .admin-header {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 24px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .admin-header h1 {
-            color: #2c3e50;
-            font-size: 28px;
-        }
-
-        .back-link {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 8px 16px;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            background: #3498db;
-            color: white;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #000000 0%, #444444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .search-section {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .search-form {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
         }
 
         .search-input {
             flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 16px;
+            border: 1px solid #d0d0d0;
+            border-radius: 12px;
             font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2c2c2c;
+            box-shadow: 0 0 0 3px rgba(44,44,44,0.1);
         }
 
         .search-btn {
-            padding: 10px 20px;
-            background: #3498db;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 14px;
-            transition: background 0.3s;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .search-btn:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         .users-table-section {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .users-table {
@@ -111,108 +113,126 @@
         }
 
         .users-table thead {
-            background: #34495e;
-            color: white;
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(100,100,100,0.05) 100%);
         }
 
-        .users-table th,
-        .users-table td {
-            padding: 12px;
+        .users-table th {
+            padding: 16px;
             text-align: left;
-            border-bottom: 1px solid #ecf0f1;
+            font-weight: 700;
+            color: #374151;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .users-table td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #6B7280;
         }
 
         .users-table tbody tr:hover {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(100,100,100,0.02) 100%);
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .badge-active {
-            background: #d4edda;
-            color: #155724;
+            background: linear-gradient(135deg, #E8E8E8 0%, #D0D0D0 100%);
+            color: #1a1a1a;
         }
 
         .badge-inactive {
-            background: #f8d7da;
-            color: #721c24;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%);
+            color: #6B6B6B;
         }
 
         .badge-admin {
-            background: #d1ecf1;
-            color: #0c5460;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
         }
 
         .badge-user {
-            background: #e2e3e5;
-            color: #383d41;
+            background: linear-gradient(135deg, #B8B8B8 0%, #8A8A8A 100%);
+            color: white;
         }
 
         .action-btn {
-            padding: 5px 10px;
-            margin: 0 2px;
+            padding: 8px 16px;
+            margin: 0 4px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 12px;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-edit {
-            background: #3498db;
+            background: linear-gradient(135deg, #4A4A4A 0%, #2C2C2C 100%);
             color: white;
         }
 
         .btn-edit:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .btn-deactivate {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #6B6B6B 0%, #4A4A4A 100%);
             color: white;
         }
 
         .btn-deactivate:hover {
-            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .btn-activate {
-            background: #27ae60;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
         }
 
         .btn-activate:hover {
-            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         .message {
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-weight: 600;
         }
 
         .message-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: #F0F0F0;
+            color: #1a1a1a;
+            border-left: 4px solid #000000;
         }
 
         .message-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: #F5F5F5;
+            color: #4A4A4A;
+            border-left: 4px solid #6B6B6B;
         }
 
         .no-data {
             text-align: center;
-            padding: 40px;
-            color: #7f8c8d;
+            padding: 60px;
+            color: #9CA3AF;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -232,25 +252,25 @@
     </div>
 
         <c:if test="${param.message == 'status_updated'}">
-            <div class="message message-success">User status updated successfully!</div>
+            <div class="message message-success">회원 상태가 성공적으로 업데이트되었습니다!</div>
         </c:if>
         <c:if test="${param.message == 'role_updated'}">
-            <div class="message message-success">User role updated successfully!</div>
+            <div class="message message-success">회원 권한이 성공적으로 업데이트되었습니다!</div>
         </c:if>
         <c:if test="${param.message == 'user_deactivated'}">
-            <div class="message message-success">User deactivated successfully!</div>
+            <div class="message message-success">회원이 성공적으로 비활성화되었습니다!</div>
         </c:if>
         <c:if test="${param.error == 'update_failed'}">
-            <div class="message message-error">Failed to update user. Please try again.</div>
+            <div class="message message-error">회원 정보 업데이트에 실패했습니다. 다시 시도해주세요.</div>
         </c:if>
 
         <div class="search-section">
             <form class="search-form" action="${pageContext.request.contextPath}/admin/users" method="get">
                 <input type="hidden" name="action" value="search">
                 <input type="text" name="keyword" class="search-input" 
-                       placeholder="Search by username, name, or email..." 
+                       placeholder="아이디, 이름, 이메일로 검색..." 
                        value="${param.keyword}">
-                <button type="submit" class="search-btn">Search</button>
+                <button type="submit" class="search-btn">검색</button>
             </form>
         </div>
 
@@ -261,13 +281,13 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Username</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Status</th>
-                                <th>Created</th>
-                                <th>Actions</th>
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>이메일</th>
+                                <th>권한</th>
+                                <th>상태</th>
+                                <th>가입일</th>
+                                <th>작업</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -284,7 +304,7 @@
                                     </td>
                                     <td>
                                         <span class="badge ${user.active ? 'badge-active' : 'badge-inactive'}">
-                                            ${user.active ? 'ACTIVE' : 'INACTIVE'}
+                                            ${user.active ? '활성' : '비활성'}
                                         </span>
                                     </td>
                                     <td>${user.createdAt}</td>
@@ -295,8 +315,8 @@
                                                 <input type="hidden" name="userId" value="${user.userId}">
                                                 <input type="hidden" name="status" value="INACTIVE">
                                                 <button type="submit" class="action-btn btn-deactivate" 
-                                                        onclick="return confirm('Are you sure you want to deactivate this user?')">
-                                                    Deactivate
+                                                        onclick="return confirm('이 회원을 비활성화하시겠습니까?')">
+                                                    비활성화
                                                 </button>
                                             </form>
                                         </c:if>
@@ -306,7 +326,7 @@
                                                 <input type="hidden" name="userId" value="${user.userId}">
                                                 <input type="hidden" name="status" value="ACTIVE">
                                                 <button type="submit" class="action-btn btn-activate">
-                                                    Activate
+                                                    활성화
                                                 </button>
                                             </form>
                                         </c:if>
@@ -316,8 +336,8 @@
                                                 <input type="hidden" name="userId" value="${user.userId}">
                                                 <input type="hidden" name="role" value="ADMIN">
                                                 <button type="submit" class="action-btn btn-edit" 
-                                                        onclick="return confirm('Are you sure you want to make this user an admin?')">
-                                                    Make Admin
+                                                        onclick="return confirm('이 회원을 관리자로 지정하시겠습니까?')">
+                                                    관리자 지정
                                                 </button>
                                             </form>
                                         </c:if>
@@ -328,7 +348,7 @@
                     </table>
                 </c:when>
                 <c:otherwise>
-                    <div class="no-data">No users found</div>
+                    <div class="no-data">회원이 없습니다</div>
                 </c:otherwise>
             </c:choose>
         </div>
