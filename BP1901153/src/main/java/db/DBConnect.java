@@ -27,7 +27,7 @@ public class DBConnect {
             config.setIdleTimeout(600000);
             config.setMaxLifetime(1800000);
 
-            // 성능 최적화
+            // 설정 
             config.addDataSourceProperty("cachePrepStmts", "true");
             config.addDataSourceProperty("prepStmtCacheSize", "250");
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

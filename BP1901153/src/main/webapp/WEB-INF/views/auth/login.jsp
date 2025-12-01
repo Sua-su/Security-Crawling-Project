@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <% String contextPath = request.getContextPath(); String
-message = (String) request.getAttribute("message"); String error = (String)
-request.getAttribute("error"); %>
+pageEncoding="UTF-8" %> 
+<% String contextPath = request.getContextPath(); String message = (String) request.getAttribute("message");
+String error = (String)request.getAttribute("error"); %>
 <!DOCTYPE html>
 <html>
   <head>

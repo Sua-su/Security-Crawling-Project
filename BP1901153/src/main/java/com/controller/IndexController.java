@@ -26,7 +26,7 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+    	
         HttpSession session = request.getSession();
         User loggedInUser = (User) session.getAttribute("user");
         String username = (String) session.getAttribute("username");

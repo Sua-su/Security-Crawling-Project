@@ -76,7 +76,7 @@ public class SignupController extends HttpServlet {
         // User 객체 생성
         User user = new User();
         user.setUsername(username);
-        user.setPassword(password); // 실제로는 암호화 필요
+        user.setPassword(password); // 실제로는 암호화 필요 일단 세션 http에 대충 박음
         user.setName(name);
         user.setEmail(email);
         user.setPhone(null); // 선택 필드는 null
